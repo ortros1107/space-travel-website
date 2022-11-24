@@ -1,0 +1,107 @@
+.underline-indicators>* {
+  background: transparent;
+  border-color: transparent;
+}
+
+.underline-indicators>*>span {
+  cursor: pointer;
+  padding: var(--underline-gap, .5rem) 0;
+  border: 0;
+  border-bottom: .2rem solid hsl(var(--clr-white) / 0);
+  background-color: transparent;
+}
+
+.underline-indicators>*>span:hover,
+.underline-indicators>*>span:focus {
+  border-color: hsl(var(--clr-white) / .5);
+}
+
+.underline-indicators [aria-selected="true"],
+.underline-indicators [aria-selected="true"]:hover,
+.underline-indicators [aria-selected="true"]:focus {
+  color: hsl(var(--clr-white) / 1);
+  border-color: hsl(var(--clr-white) / 1);
+}
+
+
+
+/* Layout */
+
+.background {
+  background-size: cover;
+  background-position: bottom center;
+}
+
+.grid-container--destination {
+  --flow-space: 2rem;
+  grid-template-areas:
+    'title'
+    'image'
+    'tabs'
+    'content';
+}
+
+.grid-container--destination>picture {
+  grid-area: image;
+  max-width: 60%;
+  align-self: start;
+}
+
+.grid-container--destination>.tab-list {
+  grid-area: tabs;
+}
+
+.grid-container--destination>.destination-info {
+  grid-area: content;
+}
+
+.destination-meta {
+  flex-direction: column;
+  border-top: 1px solid hsl(var(--clr-white) / .1);
+  padding-top: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.destination-meta p {
+  font-size: 1.75rem;
+}
+
+.destination {
+  background-image: url("/images/destination/background/background-destination-mobile.jpg");
+}
+
+@media (min-width: 35rem) {
+  .destination {
+    background-position: center center;
+    background-image: url("/images/destination/background/background-destination-tablet.jpg");
+  }
+
+  .destination-meta {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 45rem) {
+  .destination {
+    background-image: url("/images/destination/background/background-destination-desktop.jpg");
+  }
+
+  .grid-container--destination {
+    justify-items: start;
+    align-content: start;
+    grid-template-areas:
+      '. title title .'
+      '. image tabs .'
+      '. image content .';
+  }
+
+  .grid-container--destination>picture {
+    max-width: 90%;
+  }
+
+  .destination-meta {
+    gap: var(--gap, min(6vw, 6rem));
+    justify-content: start;
+  }
+}

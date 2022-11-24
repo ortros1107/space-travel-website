@@ -1,0 +1,30 @@
+{
+    "home": [{
+        "images": {
+            "desktop":"/images/home/background-home-desktop.jpg",
+            "mobile":"/images/home/background-home-mobile.jpg",
+            "tablet":"/images/home/background-home-tablet.jpg"
+        }
+    }],
+    "crew": [{
+        "images": {
+            "desktop":"/images/crew/background/background-crew-desktop.jpg",
+            "mobile":"/images/crew/background/background-crew-mobile.jpg",
+            "tablet":"/images/crew/background/background-crew-tablet.jpg"
+        }
+    }], 
+    "destination": [{
+        "images": {
+            "desktop":"/images/destination/background/background-destination-desktop.jpg",
+            "mobile":"/images/destination/background/background-destination-mobile.jpg",
+            "tablet":"/images/destination/background/background-destination-tablet.jpg"
+        }
+    }], 
+    "technology": [{
+        "images": {
+            "desktop":"/images/technology/background/background-technology-desktop.jpg",
+            "mobile":"/images/technology/background/background-technology-mobile.jpg",
+            "tablet":"/images/technology/background/background-technology-tablet.jpg"
+        }
+    }] 
+}

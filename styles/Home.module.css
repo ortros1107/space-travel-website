@@ -1,0 +1,40 @@
+/* Layout */
+
+.first-child-div {
+  margin-block: max(2rem, 10vh);
+}
+
+.background {
+  background-size: cover;
+  background-position: bottom center;
+}
+
+.home {
+  background-image: url("/images/home/background-home-mobile.jpg");
+}
+
+@media (min-width: 35rem) {
+  .home {
+      background-position: center center;
+      background-image: url("/images/home/background-home-tablet.jpg");
+  }
+}
+
+@media (min-width: 45rem) {
+  .home {
+      background-image: url("/images/home/background-home-desktop.jpg");
+  }
+
+  .grid-container--home {
+    padding-bottom: max(6rem, 20vh);
+    align-items: end;
+}
+
+.grid-container--home > *:first-child {
+    grid-column: 2;
+}
+
+.grid-container--home > *:last-child {
+    grid-column: 3;
+}
+} 

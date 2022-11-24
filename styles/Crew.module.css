@@ -1,0 +1,125 @@
+.grid-container--crew>.dot-indicators {
+  grid-area: tabs;
+}
+
+.grid-container--crew>.dot-indicators>* {
+  cursor: pointer;
+  border: 0;
+  border-radius: 50%;
+  padding: .5em;
+  background-color: hsl(var(--clr-white) / .25);
+}
+
+.grid-container--crew>.dot-indicators>*:hover,
+.grid-container--crew>.dot-indicators>*:focus {
+  background-color: hsl(var(--clr-white) / .5);
+}
+
+.grid-container--crew>.dot-indicators>.active,
+.grid-container--crew>.dot-indicators>button:has([aria-selected="true"]) {
+  background-color: hsl(var(--clr-white) / 1);
+}
+
+/* Layout */
+
+.background {
+  background-size: cover;
+  background-position: bottom center;
+}
+
+.grid-container--crew {
+  --flow-space: 2rem;
+  grid-template-areas:
+    'title'
+    'image'
+    'tabs'
+    'content';
+}
+
+.grid-container--crew>picture {
+  grid-area: image;
+  max-width: 60%;
+  border-bottom: 1px solid hsl(var(--clr-white) / .1);
+}
+
+.grid-container--crew>.dot-indicators {
+  grid-area: tabs;
+}
+
+.grid-container--crew>.dot-indicators>* {
+  cursor: pointer;
+  border: 0;
+  border-radius: 50%;
+  padding: .5em;
+  background-color: hsl(var(--clr-white) / .25);
+}
+
+.grid-container--crew>.dot-indicators>*:hover,
+.grid-container--crew>.dot-indicators>*:focus {
+  background-color: hsl(var(--clr-white) / .5);
+}
+
+.grid-container--crew>.dot-indicators>.active,
+.grid-container--crew>.dot-indicators>button:has([aria-selected="true"]) {
+  background-color: hsl(var(--clr-white) / 1);
+}
+
+.grid-container--crew>.crew-details {
+  grid-area: content;
+}
+
+.crew-details h2 {
+  color: hsl(var(--clr-white) / .5);
+}
+
+.crew {
+  background-image: url("/images/crew/background/background-crew-mobile.jpg");
+}
+
+@media (min-width: 35rem) {
+  .crew {
+    background-position: center center;
+    background-image: url("/images/crew/background/background-crew-tablet.jpg");
+  }
+
+  .grid-container--crew {
+    padding-bottom: 0;
+    grid-template-areas:
+      'title'
+      'content'
+      'tabs'
+      'image';
+  }
+}
+
+@media (min-width: 45rem) {
+  .crew {
+    background-image: url("/images/crew/background/background-crew-desktop.jpg");
+  }
+
+  .grid-container--crew {
+    grid-template-columns: minmax(1rem, 1fr) minmax(0, 37rem) minmax(0, 23rem) minmax(1rem, 1fr);
+    justify-items: start;
+    grid-template-areas:
+      '. title title .'
+      '. content image .'
+      '. tabs image .';
+  }
+
+  .grid-container--crew>.dot-indicators {
+    justify-self: start;
+    align-self: center;
+    margin-block-end: 5vh;
+  }
+
+  .grid-container--crew>.crew-details {
+    max-width: 60%;
+  }
+
+  .grid-container--crew>picture {
+    grid-column: span 2;
+    align-self: end;
+    max-width: 90%;
+  }
+
+}
